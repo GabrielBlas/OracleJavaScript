@@ -1,0 +1,150 @@
+<script>
+function saltarLinea() {
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+}
+function imprimir(frase) {
+document.write(frase);
+saltarLinea();
+}
+
+// pesoBlas = 140
+// alturaBlas = 1.87
+// imcBlas = pesoBlas / (alturaBlas * alturaBlas)
+
+// imprimir("el IMC de Blas es: " + imcBlas)
+// </script>
+// <br>
+// <br>
+// <script>
+// function saltarLinea() {
+// document.write("<br>");
+// document.write("<br>");
+// document.write("<br>");
+// }
+// function imprimir(frase) {
+// document.write(frase);
+// saltarLinea();
+// }
+// function calcularIMC(peso,altura){
+// imc = peso / (altura * altura)
+// return(imc)
+// }
+
+// pesoBlas = 140
+// alturaBlas = 1.87
+//  // imcBlas = pesoBlas / (alturaBlas * alturaBlas)
+// imcBlas = calcularIMC(pesoBlas,alturaBlas)
+// imprimir("el IMC de Blas es: " + imcBlas)
+// </script>
+// <br>
+// <br>
+// <script>
+// function saltarLinea() {
+// document.write("<br>");
+// document.write("<br>");
+// document.write("<br>");
+// }
+// function imprimir(frase) {
+// document.write(frase);
+// saltarLinea();
+// }
+// function calcularIMC(peso,altura,nombre) {
+// imc = peso / (altura * altura);
+// imprimir("el IMC calculado de " + nombre + " es " + imc);
+// }
+// calcularIMC(140,1.87,"Blas");
+// saltarLinea;
+// calcularIMC(53,1.52,"Adri");
+// </script>
+// <br>
+// <br>
+// <script>
+// function saltarLinea() {
+// document.write("<br>");
+// document.write("<br>");
+// document.write("<br>");
+// }
+// function imprimir(frase) {
+// document.write(frase);
+// saltarLinea();
+// }
+// function calcularIMC(peso1,altura1,nombre1,peso2,altura2,nombre2) {
+
+// imc1 = peso1 / (altura1 * altura1);
+// imc2 = peso2 / (altura2 * altura2);
+
+// imprimir("El promedio de IMC es de " + nombre1 + " y " + nombre2 + " es " + (imc1+imc2)/2);
+
+// }
+
+// calcularIMC(140, 1.87, "Blas", 53 ,1.53 ,"Adri");
+
+// </script>
+// <br>
+// <br>
+// <script>
+// function saltarLinea() {
+// document.write("<br>");
+// document.write("<br>");
+// document.write("<br>");
+// }
+// function imprimir(frase) {
+// document.write(frase);
+// saltarLinea();
+// }
+// function calcularIMC(peso,altura) {
+// imc = peso / (altura * altura);
+// return imc;
+// }
+// imprimir("el prodmedio del IMC calculado de Blas y Adri es: " + (calcularIMC(140,1.87)+calcularIMC(53,1.53))/2);
+// </script>
+// <br>
+// <br>
+<script>
+function saltarLinea() {
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+}
+function imprimir(frase) {
+document.write(frase);
+saltarLinea();
+}
+function calcularIMC(peso,altura) {
+imc = peso / (altura * altura);
+return imc;
+}
+nombre = prompt("informe su nombre")
+pesoInformado = prompt(nombre + " Informe su peso ej: 95")
+alturaInformada = prompt(nombre + " Informe su altura ej: 1.75")
+
+imcCalculado = calcularIMC(pesoInformado,alturaInformada);
+
+imprimir("el prodmedio del IMC calculado de " + nombre + " " + imcCalculado);
+
+if (imcCalculado < 18.5) {
+    imprimir("Por amor de dios.. COMA!!");
+}
+if (imcCalculado >= 18.5) {
+    if(imcCalculado <24.99){
+    imprimir("estas joya");
+    }
+}
+if (imcCalculado >= 25) {
+    if (imcCalculado <29.99 ) {
+    imprimir("ponete las pilas.. vas a hechar panza");
+}
+}
+if (imcCalculado >= 30) {
+    if (imcCalculado <39.49) {
+    imprimir("GORRRRRDOOOOOOOOOO AFLOJA!!!! A CAMINAR YAAAA 30 cuadras por dia.");
+}
+}
+if (imcCalculado >= 39.5) {
+    if (imcCalculado <99.99) {
+    imprimir("Si usted sigue vivo, urgentemente salga a caminar todo lo que pueda por dia y cierre la boca.");
+}
+}
+</script>

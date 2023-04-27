@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<h1>Promedio edad de una familia</h1>
+<script>
+function saltarLinea() {
+	document.write("<br>");
+	document.write("<br>");
+	document.write("<br>");
+}
+function imprimir(frase) {
+	document.write(frase);
+	saltarLinea();
+}
+
+var numeroMiembros = parseInt(prompt("Hola Bienvenido! cuantos miembros son en su familia?"));
+var contador = 1;
+var totalEdades = 0;
+
+while (contador<=numeroMiembros ) {
+	
+	edad = parseInt(prompt("Ingrese la edad del Familiar"));
+	totalEdades = totalEdades + edad;
+	contador++;
+}
+mediaEdades = totalEdades/numeroMiembros;
+
+imprimir("La media de las edades de la familia es de: " + mediaEdades)
+imprimir("Fin")
+</script>

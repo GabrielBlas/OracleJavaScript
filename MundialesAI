@@ -1,0 +1,99 @@
+<head>
+	<meta charset="utf-8">
+	<title>Mundiales de Fútbol</title>
+</head>
+<body>
+	<script>
+		function saltarLinea() {
+			document.write("<br>");
+			document.write("<br>");
+			document.write("<br>");
+		}
+		function imprimir(frase) {
+			document.write(frase);
+			saltarLinea();
+		}
+
+		var anioMundial = 1930;
+
+		while (anioMundial < 2023) {
+			var campeon = "";
+			switch(anioMundial) {
+				case 1930:
+					campeon = "Uruguay";
+					break;
+				case 1934:
+					campeon = "Italia";
+					break;
+				case 1938:
+					campeon = "Italia";
+					break;
+				case 1950:
+					campeon = "Uruguay";
+					break;
+				case 1954:
+					campeon = "Alemania Occidental";
+					break;
+				case 1958:
+					campeon = "Brasil";
+					break;
+				case 1962:
+					campeon = "Brasil";
+					break;
+				case 1966:
+					campeon = "Inglaterra";
+					break;
+				case 1970:
+					campeon = "Brasil";
+					break;
+				case 1974:
+					campeon = "Alemania Occidental";
+					break;
+				case 1978:
+					campeon = "Argentina";
+					break;
+				case 1982:
+					campeon = "Italia";
+					break;
+				case 1986:
+					campeon = "Argentina";
+					break;
+				case 1990:
+					campeon = "Alemania";
+					break;
+				case 1994:
+					campeon = "Brasil";
+					break;
+				case 1998:
+					campeon = "Francia";
+					break;
+				case 2002:
+					campeon = "Brasil";
+					break;
+				case 2006:
+					campeon = "Italia";
+					break;
+				case 2010:
+					campeon = "España";
+					break;
+				case 2014:
+					campeon = "Alemania";
+					break;
+				case 2018:
+					campeon = "Francia";
+					break;
+				case 2022:
+					campeon = "";
+					break;
+				case 2026:
+					campeon = "";
+					break;
+				default:
+					campeon = "Desconocido";
+					break;
+			}
+
+			document.write("Hubo Mundial en el año " + anioMundial + " y el campeón fue " + campeon);
+			saltarLinea();
+			anioMundial = anioMundial + 4;
+		}

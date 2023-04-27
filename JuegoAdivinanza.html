@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mundiales de Fútbol</title>
+</head>
+<body>
+
+	<script>
+		function saltarLinea() {
+			document.write("<br>");
+			document.write("<br>");
+			document.write("<br>");
+		}
+
+		function imprimir(frase) {
+			document.write(frase);
+			saltarLinea();
+		}
+
+		var anioMundial = 1930;
+
+		while (anioMundial < 2023) {
+			alert("Hubo Mundial en el año " + anioMundial);
+			anioMundial = anioMundial + 4;
+		}
+
+		imprimir("<br>" +
+			"Año	    Sede	<br>" +
+			"1930	Uruguay		<br>" +
+			"1934	Italia		<br>" +
+			"1938	Francia		<br>" +
+			"1942	Guerra		<br>" +
+			"1948	Guerra		<br>" +
+			"1950	Brasil		<br>" +
+			"1954	Suiza		<br>" +
+			"1958	Suecia		<br>" +
+			"1962	Chile	    <br>" +
+			"1966	Inglaterra	<br>" +
+			"1970	México		<br>" +
+			"1974	Alemania	<br>" +
+			"1978	Argentina	<br>" +
+			"1982	España		<br>" +
+			"1986	México		<br>" +
+			"1990	Italia		<br>" +
+			"1994	USA			<br>" +
+			"1998	Francia		<br>" +
+			"2002	Japón / CdS <br>" +
+			"2006	Alemania	<br>" +
+			"2010	Sudáfrica	<br>" +
+			"2014	Brasil		<br>" +
+			"2018	Rusia		<br>" +
+			"2022	Qatar		<br>" +
+			"2026	USA/Méx/Can	");
+
+		alert("Fin!");
+	</script>
+
+</body>
+</html>

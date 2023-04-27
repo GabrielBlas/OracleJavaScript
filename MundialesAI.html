@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	}
+
+	var mundiales = [
+		{anio: 1930, campeon: "Campeon: Uruguay - Sede: Uruguay"},
+		{anio: 1934, campeon: "Campeon: Italia - Sede: Italia"},
+		{anio: 1938, campeon: "Campeon: Italia - Sede: Francia"},
+		{anio: 1950, campeon: "Campeon: Uruguay - Sede: Brasil"},
+		{anio: 1954, campeon: "Campeon: Alemania Occidental - Sede: Suiza"},
+		{anio: 1958, campeon: "Campeon: Brasil - Sede: Suecia"},
+		{anio: 1962, campeon: "Campeon: Brasil - Sede: Chile"},
+		{anio: 1966, campeon: "Campeon: Inglaterra - Sede: Inglaterra"},
+		{anio: 1970, campeon: "Campeon: Brasil - Sede: Mexico"},
+		{anio: 1974, campeon: "Campeon: Alemania Occidental - Sede: Alemania Occidental"},
+		{anio: 1978, campeon: "Campeon: Argentina - Sede: Argentina"},
+		{anio: 1982, campeon: "Campeon: Italia - Sede: España"},
+		{anio: 1986, campeon: "Campeon: Argentina - Sede: Mexico"},
+		{anio: 1990, campeon: "Campeon: Alemania - Sede: Italia"},
+		{anio: 1994, campeon: "Campeon: Brasil - Sede: USA"},
+		{anio: 1998, campeon: "Campeon: Francia - Sede: Francia"},
+		{anio: 2002, campeon: "Campeon: Brasil - Sede: Corea/Japon"},
+		{anio: 2006, campeon: "Campeon: Italia - Sede: Alemania"},
+		{anio: 2010, campeon: "Campeon: España - Sede: Sudafrica"},
+		{anio: 2014, campeon: "Campeon: Alemania - Sede: Alemania"},
+		{anio: 2018, campeon: "Campeon: Francia - Sede: Rusia"},
+		{anio: 2022, campeon: "Campeon: Argentina - Sede: Qatar"},
+		{anio: 2026, campeon: "Campeon: Desconocido"},
+		{anio: 2030, campeon: "Campeon: Desconocido"}
+	];
+
+	imprimir("Lista de campeones del mundo:");
+
+	for (var i = 0; i < mundiales.length; i++) {
+		imprimir(mundiales[i].anio + " - " + mundiales[i].campeon);
+	}
+</script>
