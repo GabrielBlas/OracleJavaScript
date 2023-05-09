@@ -14,12 +14,13 @@
     var xBlue = 60;
     var yCuad = 0;
     var tamCuad = 30;
+    var colorActual = "white";
 
-    function dibujarCirculo(x,y) {
+    function dibujarCirculo(x,y, colorActual) {
 
         if(puedoDibujar) {
 
-            pincel.fillStyle = 'white';
+            pincel.fillStyle = colorActual;
             pincel.beginPath();
             pincel.arc(x, y, 5, 0, 2 * 3.14);
             pincel.fill();
@@ -71,7 +72,30 @@
         var y = evento.pageY - pantalla.offsetTop;
 
         if (areaDib(x,y)){
-            dibujarCirculo(x,y);
+            dibujarCirculo(x,y,colorActual);
+        }
+    }
+
+    function selColor(evento) {
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if (y > yCuad && y < (yCuad + tamCuad)){
+
+            if(x > xRojo && x < (xRojo + tamCuad)){
+            
+                colorActual = "red";
+                console.log(colorActual);
+            
+            }else if (x > xWhite && x < (xWhite+tamCuad)){
+            
+                colorActual = "white";
+            
+            }else if( x > xBlue && x < (xBlue + tamCuad)){
+            
+                colorActual = "blue";
+            
+            }
         }
     }
 
@@ -82,5 +106,7 @@
     pantalla.onmouseup = deshabilitarDibujar;
 
     paleta();
+
+    pantalla.onclick = selColor;
 
 </script>

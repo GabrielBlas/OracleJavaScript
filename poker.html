@@ -1,0 +1,131 @@
+<script>
+// Definición de las cartas y los palos
+const suits = ["hearts", "diamonds", "clubs", "spades"];
+const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+
+// Clase Carta
+class Card {
+  constructor(value, suit) {
+    this.value = value;
+    this.suit = suit;
+  }
+
+  toString() {
+    return `${this.value} of ${this.suit}`;
+  }
+}
+
+// Clase Baraja
+class Deck {
+  constructor() {
+    this.cards = [];
+    for (let suit of suits) {
+      for (let value of values) {
+        this.cards.push(new Card(value, suit));
+      }
+    }
+  }
+
+  shuffle() {
+    for (let i = this.cards.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
+    }
+  }
+
+  deal() {
+    return this.cards.pop();
+  }
+}
+
+// Clase Jugador
+class Player {
+  constructor(name) {
+    this.name = name;
+    this.hand = [];
+  }
+
+  draw(deck, numCards) {
+    for (let i = 0; i < numCards; i++) {
+      this.hand.push(deck.deal());
+    }
+  }
+
+  discard(cards) {
+    for (let card of cards) {
+      let index = this.hand.indexOf(card);
+      this.hand.splice(index, 1);
+    }
+  }
+}
+
+// Clase Jugador Humano
+class HumanPlayer extends Player {
+  discardCards() {
+    const discardedCards = [];
+
+    console.log(`${this.name}, enter the numbers of the cards you want to discard (separated by commas):`);
+
+    const stdin = process.openStdin();
+    stdin.addListener("data", (input) => {
+      const cardNumbers = input.toString().trim().split(",").map((num) => parseInt(num) - 1);
+
+      for (const cardNum of cardNumbers) {
+        discardedCards.push(this.hand[cardNum]);
+      }
+
+      this.discard(discardedCards);
+      stdin.removeAllListeners("data");
+      stdin.destroy();
+    });
+  }
+}
+
+// Clase Jugador Computadora
+class ComputerPlayer extends Player {
+  discardCards() {
+    const discardedCards = [];
+
+    for (const card of this.hand) {
+      if (card.value === "2") {
+        discardedCards.push(card);
+      }
+    }
+
+    this.discard(discardedCards);
+  }
+}
+
+// Crear la baraja
+const deck = new Deck();
+deck.shuffle();
+
+// Crear los jugadores
+const humanPlayer = new HumanPlayer("John");
+const computerPlayer = new ComputerPlayer("Computer");
+
+// Repartir cartas a los jugadores
+humanPlayer.draw(deck, 5);
+computerPlayer.draw(deck, 5);
+
+// Mostrar las manos de los jugadores
+console.log(`${humanPlayer.name}'s hand: ${humanPlayer.hand}`);
+console.log(`${computerPlayer.name}'s hand: ${computerPlayer.hand}`);
+
+// Descartar cartas del jugador humano
+humanPlayer.discardCards();
+
+// Descartar cartas de la máquina
+const discardedCards = [];
+for (const card of computerPlayer.hand) {
+if (card.value === "2") {
+discardedCards.push(card);
+}
+}
+computerPlayer.discard(discardedCards);
+
+// Mostrar las manos de los jugadores
+  console.log(${player1.name}'s hand: ${player1.hand}');
+  console.log(${player2.name}'s hand: ${player2.hand}');
+
+</script>

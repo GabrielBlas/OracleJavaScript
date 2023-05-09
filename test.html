@@ -15,12 +15,13 @@
     var xAzul = 100;
     var yCuadrados = 0;
     var tamanhoCuadrados = 50;
+    var colorActual = "blue";
 
-    function dibujarCirculo(x,y) {
+    function dibujarCirculo(x,y,colorActual ) {
 
         if(puedoDibujar) {
 
-            pincel.fillStyle = 'blue';
+            pincel.fillStyle = colorActual;
             pincel.beginPath();
             pincel.arc(x, y, 5, 0, 2 * 3.14);
             pincel.fill();
@@ -61,7 +62,7 @@
     //Función para delimitar el área
     function puedeDisenharArea(xCoordenada,yCoordenada){
 
-        if (xCoordenada >= 0 && (xCoordenada < (3*tamanhoCuadrados+5)) && 
+        if ((xCoordenada >= 0 && xCoordenada < (3*tamanhoCuadrados+5)) && 
             (yCoordenada >=0 && yCoordenada < (tamanhoCuadrados+5))) {
 
             return false;
@@ -81,9 +82,40 @@
 
         if (puedeDisenharArea(x,y)){
 
-                dibujarCirculo(x,y);
+                dibujarCirculo(x,y,colorActual);
 
         }
+
+    }
+
+    function seleccionarColor(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        //Cada condición altera el color de la variable colorActual
+
+        //Comenzamos por la condición del eje Y que es común para todas
+        if (y > yCuadrados && y < (yCuadrados + tamanhoCuadrados)) {
+
+            if(x > xRojo && x < (xRojo + tamanhoCuadrados)) {
+
+                colorActual = "red";
+                console.log(colorActual);
+
+            } else if (x > xVerde && x < (xVerde + tamanhoCuadrados)) {
+
+                colorActual = "green";
+
+            } else if(x > xAzul && x < (xAzul + tamanhoCuadrados)) {
+
+                colorActual = "blue";
+
+            }            
+
+
+        }
+
 
     }
 
@@ -94,5 +126,7 @@
     pantalla.onmouseup = deshabilitarDibujar;
 
     dibujarPaletaColores();
+
+    pantalla.onclick = seleccionarColor;
 
 </script>
